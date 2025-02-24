@@ -1,19 +1,13 @@
 import React from 'react'
-import {Link,Outlet} from 'react-router-dom'
-
-const Layout = () => {
+import {Link , Outlet} from "react-router-dom"
+function Layout() {
   return (
     <>
 
-  <Link to="/">Home<Link/>
-  <Link to="insert">insert<Link/>
-  <Link to="display">display<Link/>
-  
-  
-
-
-
-
+     <Link to="/" >Home/</Link> 
+     <Link to="/insert" >Insert/</Link> 
+     <Link to="/display" >Display</Link> 
+  <main><Outlet/></main>
     </>
   )
 }
