@@ -33,8 +33,13 @@ const AddnewBook=async(req,res)=>{
         
     }
 }
+const Displayalldata=async(req,res)=>{
+    const Authordata  = await Authormodel.find().populate("bookid")
+    res.status(200).send(Authordata)
+}
 module.exports={
     Bookinsert,
     Bookshow,
-    AddnewBook
+    AddnewBook,
+    Displayalldata,
 }
