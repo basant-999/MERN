@@ -3,6 +3,8 @@ import {BrowserRouter,Route,Routes} from "react-router-dom"
 import Home from "./component/Home"
 import Insert from "./component/Insert"
 import Display from "./component/Display"
+import Showdata from "./component/showdata"
+import Library from "./component/Library"
 
 
 
@@ -18,7 +20,8 @@ function App() {
            <Route path="home" element={<Home/>}/>
            <Route path="insert" element={<Insert/>}/>
            <Route path="display" element={<Display/>}/>
-
+           <Route path="showdata/:id" element={<Showdata/>}/>
+           <Route path="booklib" element={<Library/>}/>
 
                
            </Route>

@@ -18,6 +18,32 @@ const datainsert=async(req,res)=>{
    
    res.send("aal clear")
 }
+const datadisplay=async(req,res)=>{
+
+    const author = await Authormodel.find().populate("bookid")
+   res.send(author)
+}
+
+const showdata=async(req,res)=>{
+    const {bookname,price,aid} = req.body
+    const book = await bookmodel.create({
+        bookname:bookname,
+        price:price,
+        authorid:aid
+    })
+
+    await Authormodel.findByIdAndUpdate(aid,{$push:{bookid:book._id}})
+    
+    res.send("successfully added")
+}
+
+const libdisplay=async(req,res)=>{
+  const lib = await bookmodel.find().populate("authorid")
+  res.send(lib)
+}
 module.exports={
-    datainsert
+    datainsert,
+    datadisplay,
+    showdata,
+    libdisplay
 }
